@@ -1,4 +1,6 @@
-######v0.0.1
+######v0.0.2
+Modified code so that events can be passed as date strings.
+
 #Caleandar 
 Let me keep the intro brief. It's a lightweight (about `7.5kb` minified at the time of writing) and library-independent calendar script with optional themes. You can add events to the calendar and add functionality on click of the event. That's about the jist of it. Continue reading for instructions on how to use and examples.
 
@@ -38,17 +40,17 @@ An array of event objects to be placed on their respective dates on the calendar
 ######Examples:
 Using Simple links for events:
 ```
-var events = [
-  {'Date': new Date(2016, 6, 1), 'Title': 'Doctor appointment at 3:25pm.'},
-  {'Date': new Date(2016, 6, 7), 'Title': 'New Garfield movie comes out!', 'Link': 'https://garfield.com'},
-  {'Date': new Date(2016, 6, 11), 'Title': '25 year anniversary', 'Link': 'https://www.google.com.au/#q=anniversary+gifts'},
-];
+var events =  [
+         { 'Date': "2023-12-19", 'Title': 'a1 19th' },
+         { 'Date': "2023-12-15", 'Title': 'a1 15th' },
+         { 'Date': "2023-12-18", 'Title': 'a1 18th' },
+     ];
 ```
 Using anonymous functions to instantiate on click:
 ```
 var events = [
   {'Date': new Date(2016, 6, 1), 'Title': 'Doctor appointment at 3:25pm.', 'Link': function(){console.log('Reminder!');}},
-  {'Date': new Date(2016, 6, 7), 'Title': 'New Garfield movie comes out!', 'Link': function(){alert("Better not miss the movie!");}},
+  {'Date':  "2023-12-19",, 'Title': 'New Napolean movie comes out!', 'Link': function(){alert("Better not miss the movie!");}},
   {'Date': new Date(2016, 6, 11), 'Title': '25 year anniversary', 'Link': function(){console.debug(document.getElementById('foo'));}},
 ];
 ```

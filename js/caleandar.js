@@ -205,9 +205,9 @@ function createCalendar(calendar, element, adjuster){
       var number = DayNumber(i+1);
       // Check Date against Event Dates
       for(var n = 0; n < calendar.Model.length; n++){
-        var evDate = calendar.Model[n].Date;
-        var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month, (i+1));
-        if(evDate.getTime() == toDate.getTime()){
+    var evDate = new Date(calendar.Model[n].Date);
+    var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month, (i + 1));
+        if (evDate.getDate() == toDate.getDate()) {
           number.className += " eventday";
           var title = document.createElement('span');
           title.className += "cld-title";
